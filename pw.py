@@ -3,6 +3,7 @@
 import pyperclip
 import sys
 import string
+from colorama import Fore, Style
 from random import choice
 
 pass_lenght = 40
@@ -12,9 +13,9 @@ try:
     pass_input = sys.argv[1]
     pass_lenght = int(pass_input)
 except IndexError:
-    print(f"No args — generating {pass_lenght} char long pass")
+    print(f"{Fore.RED}No args — generating {pass_lenght} char long pass{Style.RESET_ALL}")
 except ValueError:
-    print(f"{pass_input} is not a natural number. Using default settings")
+    print(f"[{Fore.RED}{pass_input}{Style.RESET_ALL}] is not a natural number. Using default settings")
 except Exception as e:
     print(f"Error: ", e)
 
@@ -28,4 +29,4 @@ for i in range(pass_lenght):
 
 pyperclip.copy(password)
 print(f"Pass of {len(pyperclip.paste())} chars copied in the clipboard")
-print(f"\n\n{pyperclip.paste()}\n")
+print(f"\n\n{Fore.YELLOW}{pyperclip.paste()}{Style.RESET_ALL}\n")
