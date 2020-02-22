@@ -4,7 +4,17 @@ A very basic password generator:
 
 generates a password on the fly and pushes it to the clipboard.
 
-Takes a positive argument as a password lenght. If no argument is provided, or the argument is of the erroneous type, a default value of 40 charachters is used.
-Current generator uses <s>pseudorandom mix of ASCII charachters (upper and lower case), numbers, and special charachters.</s> `1-1000.txt` dictionary of most popular words in English to pick the non-spaced combo of approximatley the required lenght and adds one number and one special charachter at the end.
+**Optional:** a lenght of the password (_0 < int < whatever your system or reason may allow_)
+
+**Default lenght:** 40 charachters
+
+Current generator's MO:
+* picks random words from [1-1000.txt](https://gist.github.com/dmitryTsatsarin/e6b8b43f2a9a265b98a7) -- a short dictionary of most popular clean words in English language
+* Capitalize each word
+* strings all words together
+* at the end of the string are added:
+    * One single digit from 0 to 9
+    * One single special charachter
+
 
 Made it just because couldn't find a decent pass generator with no drama attached.
