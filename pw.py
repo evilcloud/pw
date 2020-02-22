@@ -30,7 +30,6 @@ def pick_pass(words_list, pass_lenght):
 
 
 dict_name = "1-1000.txt"
-words_list = load_dict(dict_name)
 chars_numbers = list("0123456789")
 chars_special = list("!@#$%^&=;:")
 colorama.init(autoreset=True)
@@ -44,12 +43,17 @@ except IndexError:
         f"{Fore.BLUE}No args — generating {pass_lenght} char long pass{Style.RESET_ALL}"
     )
 except ValueError:
-    print(
-        f"[{Fore.RED}{pass_input}{Style.RESET_ALL}] is not a natural number. Using default settings"
-    )
+    if sys.argv[1] == "--fuck":
+        print(f"{Back.RED}{Fore.YELLOW} PROFANE MODE ON ")
+        dict_name = "bad-words.txt"
+    else:
+        print(
+            f"[{Fore.RED}{pass_input}{Style.RESET_ALL}] is not a natural number. Using default settings"
+        )
 except Exception as e:
     print(f"Error: ", e)
 
+words_list = load_dict(dict_name)
 
 password = pick_pass(words_list, pass_lenght - 2)
 password.append(choice(chars_numbers) + choice(chars_special))
