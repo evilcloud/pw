@@ -44,7 +44,7 @@ except IndexError:
     )
 except ValueError:
     if sys.argv[1] == "--fuck":
-        print(f"{Back.RED}{Fore.YELLOW} PROFANE MODE ON ")
+        print(f"{Back.RED}{Fore.YELLOW} PROFANITY MODE ON ")
         dict_name = "bad-words.txt"
     else:
         print(
