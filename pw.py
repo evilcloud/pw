@@ -3,7 +3,8 @@
 import pyperclip
 import sys
 import string
-from colorama import Fore, Style
+import colorama
+from colorama import Fore, Back, Style
 from random import choice
 
 
@@ -21,7 +22,7 @@ def pick_pass(words_list, pass_lenght):
     pass_combo = []
     pass_combo_lenght = 0
     while pass_combo_lenght != pass_lenght:
-        pass_combo.append(choice(words_list))
+        pass_combo.append(choice(words_list).capitalize())
         pass_combo_lenght = len("".join(pass_combo))
         if pass_combo_lenght > pass_lenght:
             pass_combo = []
@@ -32,6 +33,7 @@ dict_name = "1-1000.txt"
 words_list = load_dict(dict_name)
 chars_numbers = list("0123456789")
 chars_special = list("!@#$%^&=;:")
+colorama.init(autoreset=True)
 
 pass_lenght = 40
 try:
@@ -72,6 +74,6 @@ colors = [
     "\x1b[37m",
     "\x1b[33m",
 ]
-colored_pass = [choice(colors) + word.strip("\n") for word in password]
+colored_pass = "".join([choice(colors) + word.strip("\n") for word in password])
 
-print("".join(colored_pass))
+print(f"{Back.BLACK}{colored_pass}")
