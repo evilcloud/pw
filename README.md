@@ -18,7 +18,9 @@ Current generator's MO:
 
 Made it just because couldn't find a decent pass generator with no drama attached.
 
-*Additionally:* added a packaged executables, that runs in the bar and creates username: 1 adjective + 1 noun (dictionaries from (Hugsy)[https://github.com/hugsy/stuff/tree/master/random-word] )
+*Additionally:* added a packaged executables, that runs in the bar and creates username: 1 adjective + 1 noun (dictionaries from [Hugsy](https://github.com/hugsy/stuff/tree/master/random-word))
 
 
 There is also a profanity mode with `--fuck`. Dictionary is taken directly, with no modifications, from Luis von Ahn's [Offensive/Profane Word List](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt)
+
+Also: got an icon -- hearlessly ripped off from a logo of a super-large corporation. 
