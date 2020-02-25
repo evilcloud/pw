@@ -163,3 +163,5 @@ pip-selfcheck.json
 
 # Custom
 .app
+Contents/
+Contents
