@@ -160,3 +160,6 @@ pip-selfcheck.json
 .history
 
 # End of https://www.gitignore.io/api/venv,macos,python,visualstudiocode
+
+# Custom
+.app
