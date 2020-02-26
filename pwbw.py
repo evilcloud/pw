@@ -52,16 +52,32 @@ def generate_username():
     username = get_random_words(load_dict('english-adjectives.txt'))
     username.extend(get_random_words(load_dict('english-nouns.txt')))
     return username
+ 
+def print_all(print_material: list):
+    max_width = len(max(print_material, key=len)) + 4
+    for i in print_material:
+        if i.startswith('`'):
+            print(i[1:].rjust(max_width))
+        else:
+            print(i.center(max_width))
+    return
     
 def main():
     ''' A simple prog, that generates password on the fly '''
     password = generate_password()
     pyperclip.copy("".join(password))
     # print(f"Pass of {len(pyperclip.paste())} chars copied in the clipboard\n")
-    print()
-    print("".join(generate_username()))
-    print()
-    print("".join(password))
+    # print()
+    # print("".join(generate_username()))
+    # print()
+    # print("".join(password))
+    print_material = []
+    print_material.append("`Username\n")
+    print_material.append("".join(generate_username())+"\n")
+    print_material.append("`{} chars\n".format(len(pyperclip.paste())))
+    print_material.append("".join(password))
+    print_all(print_material)
+
 
 
 if __name__=="__main__":
