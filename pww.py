@@ -1,8 +1,7 @@
 #!/usr/local/bin/python3
 
 import os
-
-# import pyperclip
+import pyperclip
 import string
 from random import choice, randint
 
@@ -184,20 +183,15 @@ def generate_password(
         random_words_lenght(total_wordlist)
     )  # + random_num() + random_special
 
+def print_monocolor(text):
+    capitalized = [word.capitalize() for word in text]
+    print("".join(capitalized))
+    return
 
 def main():
-    # adjectives = get_wordlist(consts.DICT_ADJECTIVES)
-    # bad_words = get_wordlist(consts.DICT_PROFANITIES)
-    # nouns = get_wordlist(consts.DICT_NOUNS)
-
-    # test_dict = nouns + adjectives
-    # num_ran = (capitalize_list(random_words_number(test_dict, 10)))
-    # print(num_ran, len(num_ran))
-    # len_ran = (capitalize_list(random_words_lenght(test_dict)))
-    # print(len_ran, len("".join(len_ran)), "\n", "".join(len_ran))
     print(generate_username())
     print(generate_password())
-
+    # print_monocolor(generate_password)
 
 if __name__ == "__main__":
     main()
