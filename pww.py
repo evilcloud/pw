@@ -4,6 +4,7 @@ import os
 import pyperclip
 import string
 from random import choice, randint
+from pathlib import Path
 
 import consts
 
@@ -183,15 +184,14 @@ def generate_password(
         random_words_lenght(total_wordlist)
     )  # + random_num() + random_special
 
-def print_monocolor(text):
-    capitalized = [word.capitalize() for word in text]
-    print("".join(capitalized))
-    return
+# def print_monocolor(text):
+#     # capitalized = [word.capitalize() for word in text]
+#     print("".join(text))
+#     return
 
 def main():
-    print(generate_username())
-    print(generate_password())
-    # print_monocolor(generate_password)
+    print("".join(generate_username()))
+    print("".join(generate_password()))
 
 if __name__ == "__main__":
     main()
